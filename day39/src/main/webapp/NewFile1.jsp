@@ -34,9 +34,9 @@
 		<th>점수</th>
 	</tr>
 <%
-	MemberVO data = mDAO.selectOne(mvo);
+	MemberVO data = mDAO.selectOne(mvo); // 메인 페이지에서 넘어온 pk으로 selectOne 적용하여 data에 학생정보를 담음
 %>	
-	<tr>
+	<tr> <!-- 해당 학생 정보 출력 -->
 		<td><%=data.getMpk()%>번</td>
 		<td><%=data.getName()%></td>
 		<td><%=data.getScore()%></td>

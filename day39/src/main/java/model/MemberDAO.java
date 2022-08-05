@@ -15,7 +15,7 @@ public class MemberDAO {
 	final String sql_update="UPDATE MEMBER SET SCORE=? WHERE MPK=?";
 	final String sql_delete="DELETE MEMBER WHERE MPK=?";
 	
-	public ArrayList<MemberVO> selectAll(MemberVO vo) { // 전체 목록 반환 , 영화 검색, 장르 검색
+	public ArrayList<MemberVO> selectAll(MemberVO vo) { // 전체 학생정보 반환
 		ArrayList<MemberVO> datas = new ArrayList<MemberVO>();
 		conn = JDBCUtil.connect();
 		try {
@@ -37,7 +37,7 @@ public class MemberDAO {
 		return datas;
 	}
 	
-	public MemberVO selectOne(MemberVO vo) {
+	public MemberVO selectOne(MemberVO vo) { // 학생 1명 정보 반환
 	      conn = JDBCUtil.connect();
 	      ResultSet rs = null;
 	      try {
@@ -69,7 +69,7 @@ public class MemberDAO {
 	      }
 	   }
 	
-	public boolean insert(MemberVO vo) {
+	public boolean insert(MemberVO vo) { // 학생 추가
 		conn = JDBCUtil.connect();
 		try {		
 			pstmt = conn.prepareStatement(sql_insert);
@@ -89,7 +89,7 @@ public class MemberDAO {
 		return true;
 	}
 	
-	public boolean update(MemberVO vo) {
+	public boolean update(MemberVO vo) { // 학생 점수 변경
 		conn = JDBCUtil.connect();
 		try {
 			pstmt = conn.prepareStatement(sql_update);
@@ -110,7 +110,7 @@ public class MemberDAO {
 		return true;
 	}
 	
-	public boolean delete(MemberVO vo) {
+	public boolean delete(MemberVO vo) { // 학생 삭제
 		conn = JDBCUtil.connect();
 		try {
 			pstmt = conn.prepareStatement(sql_delete);
@@ -129,18 +129,5 @@ public class MemberDAO {
 		}
 		return true;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

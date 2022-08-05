@@ -42,11 +42,11 @@
 	</tr>
 <%
  
-	ArrayList<MemberVO> datas = mDAO.selectAll(mvo);
-	for(MemberVO v: datas){
+	ArrayList<MemberVO> datas = mDAO.selectAll(mvo); // selectAll로 가져온 DB정보(전체 학생부) datas배열 객체에 담음
+	for(MemberVO v: datas){ // 전체 학생부 출력
 %>	
 	<tr>
-		<td><a href="NewFile1.jsp?mpk=<%=v.getMpk()%>"><%=v.getMpk()%>번</a></td>
+		<td><a href="NewFile1.jsp?mpk=<%=v.getMpk()%>"><%=v.getMpk()%>번</a></td> <!-- 해당 번호의 학생 클릭시 pk값 매칭되어 정보 출력 페이지로 이동 -->
 		<td><%=v.getName()%></td>
 	</tr>
 <% 
